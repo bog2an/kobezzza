@@ -1,32 +1,22 @@
-class Wrapper {
-  constructor(arr) {
-    this.arr = arr;
-  }
-
-  toString() {
-    if (this.arr.length === 0) {
+function addToString(arr) {
+  Array.prototype.toString = function () {
+    if (this.length === 0) {
       return '';
     }
 
-    if (this.arr.length === 1) {
-      return this.arr[0];
+    if (this.length === 1) {
+      return this[0].toString();
     }
 
-    return `${this.arr[0]}..${this.arr[this.arr.length - 1]}`;
-  }
+    return `${this[0]}..${this[this.length - 1]}`;
+  };
+  return arr;
 }
 
-function addToString(arr) {
-  if (!Array.isArray(arr)) {
-    throw new Error("Is not array");
-  }
-
-  return new Wrapper(arr);
-}
-
-console.log(addToString([1, 2, 3, 4]).toString());
-console.log(addToString([1]).toString());
-console.log(addToString([]).toString());
+console.log(addToString([1, 2, 3, 4]).toString()); // 1..4
+console.log(addToString([1]).toString()); // 1
+console.log(addToString([]).toString()); // ''
+console.log(addToString([5, 6, 7])); // [ 5, 6, 7 ]
 
 
 String.prototype.capitalize = function () {
