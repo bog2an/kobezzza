@@ -1,16 +1,26 @@
 function addToString(arr) {
-  Array.prototype.toString = function () {
-    if (this.length === 0) {
-      return '';
-    }
+  if (!Array.isArray(arr)) {
+    throw new TypeError("The argument must be an array");
+  }
 
-    if (this.length === 1) {
-      return this[0].toString();
-    }
+  return new Proxy(arr, {
+    get(target, prop) {
+      if (prop === 'toString') {
+        return () => {
+          if (target.length === 0) {
+            return '';
+          }
 
-    return `${this[0]}..${this[this.length - 1]}`;
-  };
-  return arr;
+          if (target.length === 1) {
+            return `${target[0]}`;
+          }
+
+          return `${target[0]}..${target[target.length - 1]}`;
+        }
+      }
+      return target[prop];
+    }
+  });
 }
 
 console.log(addToString([1, 2, 3, 4]).toString()); // 1..4
