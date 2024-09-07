@@ -1,23 +1,23 @@
 {
-	"name": "labs_works",
-	"version": "1.0.0",
-	"description": "",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "https://github.com/bog2an",
-	"license": "ISC",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/bog2an/kobezzza.git"
-	},
-	"devDependencies": {
-		"eslint": "^9.10.0",
-		"eslint-plugin-react": "^7.35.2",
-		"globals": "^15.9.0",
-		"typescript-eslint": "^8.4.0"
-	},
-	"dependencies": {
-		"jsdom": "^25.0.0"
-	}
+  "name": "labs_works",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://github.com/bog2an",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bog2an/kobezzza.git"
+  },
+  "devDependencies": {
+    "eslint": "^9.10.0",
+    "eslint-plugin-react": "^7.35.2",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.4.0"
+  },
+  "dependencies": {
+    "jsdom": "^25.0.0"
+  }
 }
