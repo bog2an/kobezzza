@@ -21,7 +21,7 @@ console.log(addToString([5, 6, 7])); // [ 5, 6, 7 ]
 
 String.prototype.capitalize = function () {
   if (this.length === 0) {
-    return;
+    return '';
   }
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
