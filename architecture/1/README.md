@@ -9,10 +9,10 @@
 const ls = new LocalStorage();
 
 ls.set('a', 42);
-console.log(ls.get('a')) // 42;
+console.log(ls.get('a')); // 42;
 
 const cookie = new CookieStorage();
 
 cookie.set('a', 42);
-console.log(cookie.get('a')) // 42;
+console.log(cookie.get('a')); // 42;
 ```

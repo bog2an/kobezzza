@@ -2,12 +2,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   // "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
   // The number of spaces a tab is equal to.
@@ -16,4 +11,13 @@
   "editor.insertSpaces": true,
   // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
   "editor.detectIndentation": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.trailingComma": "all",
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": false
 }

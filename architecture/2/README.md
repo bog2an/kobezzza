@@ -20,5 +20,5 @@ addToString([]).toString();
 Необходимо добавить все строкам в JavaScript метод capitalize, который делает первую букву в строке заглавной.
 
 ```js
-"foo".capitalize(); // Foo
+'foo'.capitalize(); // Foo
 ```

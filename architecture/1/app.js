@@ -58,41 +58,38 @@ class CookieStorage extends CRUDAPI {
 
   _getItem(key) {
     let matches = document.cookie.match(
-      new RegExp("(?:^|; )" +
-        key.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-        "=([^;]*)",
-      ),
+      new RegExp('(?:^|; )' + key.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'),
     );
     return matches ? decodeURIComponent(matches[1]) : undefined;
   }
 
   _removeItem(key) {
-    this.#setCookie(key, "", { "max-age": -1 });
+    this.#setCookie(key, '', { 'max-age': -1 });
   }
 
   _clear() {
-    const cookies = document.cookie.split("; ");
+    const cookies = document.cookie.split('; ');
 
     for (let i = 0; i < cookies.length; i++) {
-      const [key] = cookies[i].split("=");
+      const [key] = cookies[i].split('=');
       this._removeItem(key);
     }
   }
 
   #setCookie(name, value, options = {}) {
-    options = { path: "/", ...options };
+    options = { path: '/', ...options };
 
     if (options.expires instanceof Date) {
       options.expires = options.expires.toUTCString();
     }
 
-    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    let updatedCookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
 
     for (let optionKey in options) {
-      updatedCookie += "; " + optionKey;
+      updatedCookie += '; ' + optionKey;
       let optionValue = options[optionKey];
       if (optionValue !== true) {
-        updatedCookie += "=" + optionValue;
+        updatedCookie += '=' + optionValue;
       }
     }
 
@@ -102,8 +99,8 @@ class CookieStorage extends CRUDAPI {
 
 const ls = new LocalStorage();
 ls.set('a', 42);
-console.log(ls.get('a')) // 42;
+console.log(ls.get('a')); // 42;
 
 const cookie = new CookieStorage();
 cookie.set('a', 42);
-console.log(cookie.get('a')) // 42;
+console.log(cookie.get('a')); // 42;
